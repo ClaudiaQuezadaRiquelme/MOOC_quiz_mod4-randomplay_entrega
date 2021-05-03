@@ -181,7 +181,7 @@ Si la respuesta es correcta, el middleware debe:
 * Añadir el identificador **id** del quiz al array **req.session.randomPlayResolved**. Conviene comprobar que no se ha añadido ya anteriormente, y evitar así que al recargar esta página se almacene varias veces.
 * Calcular la puntuación obtenida hasta el momento en el juego. Será igual a la longitud del array **req.session.randomPlayResolved**.
 * Generar la respuesta HTTP usando **res.render** para renderizar la vista **quizzes/random\_result.ejs**. Hay que pasar tres valores: un booleano llamado **result** indicando si se acertó el quiz o no, el string **answer** con la respuesta dada por el usuario, y el entero **score** con los aciertos conseguidos hasta el momento.
-* Si se implemento la mejora opcional que evitaba las trampas, también será necesario borrar **req.session.randomPlayLastQuizId**.
+* Si se implementó la mejora opcional que evitaba las trampas, también será necesario borrar **req.session.randomPlayLastQuizId**.
 
 
 Si la respuesta es incorrecta, entonces el juego debe terminar. El middleware debe:
